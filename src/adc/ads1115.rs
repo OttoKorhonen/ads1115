@@ -1,7 +1,7 @@
 use embedded_hal::{i2c::SevenBitAddress, delay::DelayNs};
 use crate::error::Ads1115error;
-use core::fmt;
 
+#[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub struct Ads1115<I2C, D> {
     i2c: I2C,
     address: SevenBitAddress,
@@ -11,7 +11,6 @@ pub struct Ads1115<I2C, D> {
 impl<I2C, D> Ads1115<I2C, D>
 where
     I2C: embedded_hal::i2c::I2c,
-    I2C::Error: fmt::Debug,
     D: DelayNs,
 {
     pub fn new(i2c: I2C, address: SevenBitAddress, delay: D) -> Self {
@@ -22,8 +21,8 @@ where
         }
     }
 
-    // MUX configurations are now available in crate::constants::mux
-    // Example: crate::constants::mux::AIN0_GND
+    // MUX configurations are now available in crate::register::mux
+    // Example: crate::register::mux::AIN0_GND
 
     /// Configures the device.
     /// To measure battery (single-ended AIN0, 8SPS, +/- 4.096V range, Single-shot):

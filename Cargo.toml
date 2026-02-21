@@ -1,5 +1,5 @@
 [package]
-name = "ads1115adc"
+name = "ads1115"
 version = "0.2.0"
 edition = "2024"
 
@@ -12,6 +12,7 @@ embedded-hal = "1.0.0"
 
 [dev-dependencies]
 cortex-m-rt = "0.7.5"
+linux-embedded-hal = "0.4"
 
 # Panic Handler
 panic-probe = { version = "1.0.0", features = ["print-defmt"] }
