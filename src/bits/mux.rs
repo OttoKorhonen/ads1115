@@ -3,7 +3,7 @@
 
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub enum MuxChannels {
-    Ain0nd = 0b100,
+    Ain0Gnd = 0b100,
     Ain1Gnd = 0b101,
     Ain2Gnd = 0b110,
     Ain3Gnd = 0b111,

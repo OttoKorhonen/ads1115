@@ -22,36 +22,45 @@ impl Config {
     pub const fn get_value(self) -> u16 {
         self.bits
     }
-    pub const fn set_operational_status(mut self, operating_status: OperatingStatus) {
+    pub const fn set_operational_status(mut self, operating_status: OperatingStatus) -> Self {
         self.bits = (self.bits & !MASK_OPERATIONAL_STATUS)
             | (operating_status.get_value() & MASK_OPERATIONAL_STATUS);
+        self
     }
-    pub const fn set_multiplexer_config(mut self, mux: MuxChannels) {
+    pub const fn set_multiplexer_config(mut self, mux: MuxChannels) -> Self {
         self.bits = (self.bits & !MASK_MUX) | (mux.get_value() & MASK_MUX);
+        self
     }
-    pub const fn set_gain_amplifier_config(mut self, gain: GainAmp) {
+    pub const fn set_gain_amplifier_config(mut self, gain: GainAmp) -> Self {
         self.bits = (self.bits & !MASK_GAIN_AMPLIFIER) | (gain.get_value() & MASK_GAIN_AMPLIFIER);
+        self
     }
-    pub const fn set_device_operation_mode(mut self, operating_mode: OperatingMode) {
+    pub const fn set_device_operation_mode(mut self, operating_mode: OperatingMode) -> Self {
         self.bits = (self.bits & !MASK_MODE) | (operating_mode.get_value() & MASK_MODE);
+        self
     }
-    pub const fn set_data_rate(mut self, data_rate: DataRate) {
+    pub const fn set_data_rate(mut self, data_rate: DataRate) -> Self {
         self.bits = (self.bits & !MASK_DATA_RATE) | (data_rate.get_value() & MASK_DATA_RATE);
+        self
     }
-    pub const fn set_comparator_mode(mut self, comparator_mode: ComparatorMode) {
+    pub const fn set_comparator_mode(mut self, comparator_mode: ComparatorMode) -> Self {
         self.bits = (self.bits & !MASK_COMPARATOR_MODE)
             | (comparator_mode.get_value() & MASK_COMPARATOR_MODE);
+        self
     }
-    pub const fn set_comparator_polarity(mut self, comparator_polarity:ComparatorPolarity) {
+    pub const fn set_comparator_polarity(mut self, comparator_polarity:ComparatorPolarity) -> Self {
         self.bits = (self.bits & !MASK_COMPARATOR_POLARITY) | (comparator_polarity.get_value() & MASK_COMPARATOR_POLARITY);
+        self
     }
-    pub const fn set_latching_comparator(mut self, latching_comparator: LatchingComparator) {
+    pub const fn set_latching_comparator(mut self, latching_comparator: LatchingComparator) -> Self {
         self.bits = (self.bits & !MASK_LATCHING_COMPARATOR)
             | (latching_comparator.get_value() & MASK_LATCHING_COMPARATOR);
+        self
     }
-    pub const fn set_comparator_queue(mut self, comparator_queue: ComparatorQueue) {
+    pub const fn set_comparator_queue(mut self, comparator_queue: ComparatorQueue) -> Self {
         self.bits = (self.bits & !MASK_COMPARATOR_Q_AND_D)
             | (comparator_queue.get_value() & MASK_COMPARATOR_Q_AND_D);
+        self
     }
 }
 
