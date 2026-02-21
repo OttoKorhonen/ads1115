@@ -5,11 +5,16 @@ pub mod operating_mode;
 pub use operating_mode::OperatingMode;
 
 pub mod mux;
-mod data_rate;
-mod operating_status;
-mod comparator_mode;
-mod comparator_polarity;
-mod latching_comparator;
-mod comparator_queue;
-
 pub use mux::MuxChannels;
+pub mod data_rate;
+pub use data_rate::DataRate;
+pub mod operating_status;
+pub use operating_status::OperatingStatus;
+pub mod comparator_mode;
+pub use comparator_mode::ComparatorMode;
+pub mod comparator_polarity;
+pub use comparator_polarity::ComparatorPolarity;
+pub mod latching_comparator;
+pub use latching_comparator::LatchingComparator;
+pub mod comparator_queue;
+pub use comparator_queue::ComparatorQueue;

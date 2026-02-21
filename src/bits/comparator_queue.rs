@@ -8,8 +8,8 @@ pub enum ComparatorQueue {
 }
 
 impl ComparatorQueue {
-    pub const fn get_value(self) -> u8 {
-        self as u8
+    pub const fn get_value(self) -> u16 {
+        self as u16
     }
 }
 

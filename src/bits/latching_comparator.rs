@@ -5,8 +5,8 @@ pub enum LatchingComparator {
     CompLatLatching = 0b1,
 }
 impl LatchingComparator {
-    pub const fn get_value(self) -> u8 {
-        self as u8
+    pub const fn get_value(self) -> u16 {
+        self as u16
     }
 }
 
