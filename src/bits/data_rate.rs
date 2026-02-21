@@ -12,7 +12,9 @@ pub enum DataRate {
 }
 
 impl DataRate {
-    pub fn get_value(self) -> u8 {self as u8}
+    pub fn get_value(self) -> u8 {
+        self as u8
+    }
 }
 
 impl Default for DataRate {

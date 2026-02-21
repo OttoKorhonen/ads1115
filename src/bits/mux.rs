@@ -2,7 +2,7 @@
 /// These bits configure the input multiplexer.
 
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
-pub enum Mux {
+pub enum MuxChannels {
     Ain0nd = 0b100,
     Ain1Gnd = 0b101,
     Ain2Gnd = 0b110,
@@ -13,14 +13,14 @@ pub enum Mux {
     Ain2Ain3 = 0b011,
 }
 
-impl Mux {
+impl MuxChannels {
     pub fn get_value(self) -> u8 {
         self as u8
     }
 }
 
-impl Default for Mux {
+impl Default for MuxChannels {
     fn default() -> Self {
-        Mux::Ain0Ain1
+        MuxChannels::Ain0Ain1
     }
 }
