@@ -1,6 +1,7 @@
 use core::fmt;
+use serde::Serialize;
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub enum Ads1115error<E> {
     I2cError(E),
     DeviceNotFound,
